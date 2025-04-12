@@ -40,6 +40,7 @@
     //     }
     // },
     "hyprland/workspaces": {
+     "active-only": false,
      "format": "{icon}",
      "on-scroll-up": "hyprctl dispatch workspace e+1",
      "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -102,13 +103,14 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 24,
         "spacing": 10
     },
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        //"format-alt": "{:%Y-%m-%d}"
+        "format": "{:%m-%d-%Y %H:%M}"
     },
     "cpu": {
         "format": "{usage}% ",
