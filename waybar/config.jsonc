@@ -48,9 +48,9 @@
      "format": "{name}:{icon}",
      "format-icons": {
        "urgent": "",
-       "active": "",
+       "default": "",
        "empty": "",
-       "default": ""
+       "active": ""
      },
      "persistent-workspaces": {
        "*":10
