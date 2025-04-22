@@ -2,6 +2,7 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
+    font-weight: bold;
 }
 
 window#waybar {
@@ -54,7 +55,6 @@ button {
 }
 
 #workspaces button {
-    font-weight: bold;
     padding: 0 8px;
     background-color: rgba(75, 75, 75, .5);
     color: rgba(255,255,255,.75);
