@@ -75,10 +75,8 @@ button {
 }
 
 #workspaces button:hover {
-    box-shadow: inset 0 -3px #aaaaaa;
-    transition-duration: .2s;
-    background-color: inherit;
-    background: rgba(25, 100, 200, 0.5);
+    transition-duration: .1s;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /*
