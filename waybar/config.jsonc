@@ -39,6 +39,10 @@
     //         "default": ""
     //     }
     // },
+    // },
+    "hyprland/window": {
+        "tooltip": false
+    },
     "hyprland/workspaces": {
      "active-only": false,
      "on-scroll-up": "hyprctl dispatch workspace e+1",
