@@ -55,28 +55,28 @@ button {
 }
 
 #workspaces button {
+    transition: none;
     padding: 0 8px;
-    background-color: rgba(41,128,185,0.5);
-    color: rgba(255,255,255,.75);
+    color: rgba(255,255,255,0.75);
     margin: 0 2px 0 0px;
+    background: none;
 }
 
 
 #workspaces button.empty {
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(128, 128, 128, 0.6);
 }
 
 #workspaces button.active {
-    background-color: rgba(222, 147, 95, .6);
+    background: rgba(222, 147, 95, 0.6);
 }
 
 #workspaces button.urgent {
-    background-color: rgba(100, 25, 25, 0.75);
+    background: rgba(100, 25, 25, 0.6);
 }
 
 #workspaces button:hover {
-    transition-duration: .1s;
-    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 -3px #aaaaaa;
 }
 
 /*
