@@ -333,3 +333,7 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#custom-weather {
+    background-color: rgba(75, 75, 75, .5);
+}
