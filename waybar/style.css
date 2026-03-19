@@ -56,7 +56,7 @@ button {
 
 #workspaces button {
     padding: 0 8px;
-    background-color: rgba(255, 255, 255, .25);
+    background-color: rgba(41,128,185,0.5);
     color: rgba(255,255,255,.75);
     margin: 0 2px 0 0px;
 }
@@ -67,7 +67,7 @@ button {
 }
 
 #workspaces button.active {
-    background-color: rgba(41,128,185,0.75);
+    background-color: rgba(222, 147, 95, .6);
 }
 
 #workspaces button.urgent {
@@ -112,7 +112,7 @@ button {
 }
 
 #window#window {
-  color: #DE935F;
+  color: rgba(222, 147, 95, 1);
   margin-left: 20;
 }
 
