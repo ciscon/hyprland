@@ -111,6 +111,11 @@ button {
     /*margin: 0 0;*/
 }
 
+#window#window {
+  margin-left: 20;
+}
+
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
