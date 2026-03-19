@@ -112,9 +112,9 @@ button {
 }
 
 #window#window {
+  color: #DE935F;
   margin-left: 20;
 }
-
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
