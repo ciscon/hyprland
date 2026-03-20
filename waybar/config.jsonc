@@ -14,13 +14,13 @@
     ],
     "modules-right": [
         //"idle_inhibitor",
-        "pulseaudio",
         //"network",
+        "clock",
+        "custom/weather",
         "cpu",
         "memory",
         //"temperature",
-        "custom/weather",
-        "clock",
+        "pulseaudio",
         "tray"
     ],
     // Modules configuration
