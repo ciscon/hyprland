@@ -69,7 +69,7 @@ button {
 }
 
 #workspaces button.active {
-    background: rgba(222, 147, 95, 0.75);
+    background: rgba(222, 147, 95, 0.5);
 }
 
 #workspaces button.urgent {
