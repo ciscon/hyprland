@@ -125,7 +125,7 @@
         "format": "{:%a %m-%d-%Y %H:%M}"
     },
     "cpu": {
-      "format": "{load} ",
+      "format": "{load:05} ",
       /*"format": "{usage}% ",*/
       "tooltip": false
     },
