@@ -180,6 +180,7 @@ label:focus {
 
 #cpu {
     background-color: rgba(46,204,113,0.85);
+    /*background-color: rgba(46,204,113,0.85);*/
     color: #000000;
 }
 
@@ -252,7 +253,8 @@ label:focus {
 }
 
 #tray {
-    background-color: rgba(41,128,185,0.75);
+    background-color: #000000;
+    /*background-color: rgba(41,128,185,0.75);*/
 }
 
 #tray > .passive {

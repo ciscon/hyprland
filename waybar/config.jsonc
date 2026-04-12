@@ -15,11 +15,11 @@
     "modules-right": [
         //"idle_inhibitor",
         //"network",
-        "clock",
-        "custom/weather",
         "cpu",
         "memory",
         //"temperature",
+        "custom/weather",
+        "clock",
         "pulseaudio",
         "tray"
     ],
@@ -125,7 +125,7 @@
         "format": "{:%a %m-%d-%Y %H:%M}"
     },
     "cpu": {
-      "format": "{load:05} ",
+      "format": "{load:04} ",
       /*"format": "{usage}% ",*/
       "tooltip": false
     },
