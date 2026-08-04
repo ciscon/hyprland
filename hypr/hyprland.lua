@@ -21,10 +21,8 @@
 --monitor=,modeline 275.01 1920 1928 1960 2000 1080 1130 1138 1144 +hsync -vsync,auto,auto #120.198 (nes) reduced blanking 1.2
 
 hl.monitor({
-  output   = "DP-1",
+  output   = "",
   mode     = "highrr",
-  position = "auto",
-  scale    = "auto",
 })
 
 
@@ -81,6 +79,9 @@ hl.config({
       inactive_border = "rgba(595959aa)",
     },
   },
+  debug = {
+    -- vfr = 1
+  },
   render = {
     direct_scanout = 2
   },
@@ -106,26 +107,19 @@ hl.config({
     -- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
   },
 
-  master = {
-    new_status = "master",
-  },
   misc = {
     force_default_wallpaper = -1,
     -- Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = true,
     -- If true disables the random hyprland logo / anime girl background. :(
-    -- focus_on_activate = false,
     disable_splash_rendering = true,
     --do not switch workspaces when starting programs
-    --vfr = true
-    vrr = false
+    -- focus_on_activate = true,
+    -- vrr = false
   },
   input = {
     kb_layout = "us",
-    -- kb_variant = {  },
-    -- kb_model = {  },
     --kb_options = caps:none, altwin:swap_alt_win
-    -- kb_rules = {  },
     follow_mouse = 1,
     touchpad = {
       natural_scroll = false,
@@ -287,7 +281,7 @@ hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "T", hl.dsp.layout("orientationb
 
 --bind = $mainMod CONTROL, T, layoutmsg, preserve_split true
 
-hl.bind(mainMod .. " + " .. "space", hl.dsp.exec_cmd("hyprctl keyword general:layout $(hyprctl getoption general:layout | grep -q 'scrolling' && echo 'master' || echo 'scrolling')"))
+-- hl.bind(mainMod .. " + " .. "space", hl.dsp.exec_cmd("hyprctl keyword general:layout $(hyprctl getoption general:layout | grep -q 'scrolling' && echo 'master' || echo 'scrolling')"))
 
 --! @description: "Toggle between scrolling and master layout"; @windows;
 
@@ -344,15 +338,18 @@ local immediate_apps = {
   '[Mm]mame.*',
   '.*[Ss]team.*'
 }
+
 local regex_pattern = "^(" .. table.concat(immediate_apps, "|") .. ")$"
 hl.window_rule({
   name  = "immediatemode",
   match = {
     class = regex_pattern
   },
-  immediate = true,
   fullscreen = true,
-  content = "game"
+  no_vrr = true,
+  confine_pointer = true,
+  content = "game",
+  immediate = true 
 })
 
 -- hl.window_rule({
@@ -414,21 +411,17 @@ hl.window_rule({
 })
 
 --no_gaps_when_only client
-
 hl.workspace_rule({
   workspace = "w[t1]",
   gaps_out = 0,
   gaps_in = 0,
   border_size = 0,
-  -- rounding = false,
 })
-
 hl.workspace_rule({
   workspace = "f[1]",
   gaps_out = 0,
   gaps_in = 0,
   border_size = 0,
-  -- rounding = false,
 })
 
 --environment
