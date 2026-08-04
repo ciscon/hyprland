@@ -81,24 +81,13 @@ hl.config({
       inactive_border = "rgba(595959aa)",
     },
   },
-})
-
-hl.config({
   render = {
     direct_scanout = 2
   },
-})
-
-hl.config({
   master = {
     mfact = 0.5,
     new_status = "slave",
   },
-})
-
--- https://wiki.hyprland.org/Configuring/Variables/#decoration
-
-hl.config({
   decoration = {
     rounding = 2,
     -- Change transparency of focused and unfocused windows
@@ -112,50 +101,25 @@ hl.config({
       vibrancy = 0.1696,
     },
   },
-})
-
--- https://wiki.hyprland.org/Configuring/Variables/#animations
-
-hl.config({
   animations = {
     enabled = false,
     -- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
   },
-})
 
--- See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-
-hl.config({
   master = {
     new_status = "master",
   },
-})
-
--- https://wiki.hyprland.org/Configuring/Variables/#misc
-
-hl.config({
   misc = {
     force_default_wallpaper = -1,
     -- Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo = false,
+    disable_hyprland_logo = true,
     -- If true disables the random hyprland logo / anime girl background. :(
-    focus_on_activate = false,
+    -- focus_on_activate = false,
     disable_splash_rendering = true,
     --do not switch workspaces when starting programs
     --vfr = true
-    --vrr = false
+    vrr = false
   },
-})
-
---############
-
---## INPUT ###
-
---############
-
--- https://wiki.hyprland.org/Configuring/Variables/#input
-
-hl.config({
   input = {
     kb_layout = "us",
     -- kb_variant = {  },
@@ -169,6 +133,7 @@ hl.config({
     accel_profile = "flat",
     sensitivity = -0.75,
   },
+
 })
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
@@ -370,20 +335,25 @@ hl.bind(mainMod .. " + " .. "TAB", hl.dsp.focus({ workspace = "previous" }))
 -- windowrule = float, ^(kitty)$
 
 --disable vsync and enable direct scanout for games
+local immediate_apps = { 
+  '[Xx][Tt]erm',
+  '.*[Qq]uake.*',
+  '.*zdoom.*',
+  '[Ss]team.*',
+  '.*[Ss]nes9x.*',
+  '[Mm]mame.*',
+  '.*[Ss]team.*'
+}
+local regex_pattern = "^(" .. table.concat(immediate_apps, "|") .. ")$"
 hl.window_rule({
-  name  = "match_class_____ez_q",
+  name  = "immediatemode",
   match = {
-    class =           "^(.*ez[Qq]uake.*)$",
-    class =           "^(.*zdoom.*)$",
-    class =           "^([Ss]team.*)$",
-    class =           "^(.*[Ss]nes9x.*)$",
-    class =           "^[Mm]mame$"
-    -- class =           ".*[Mm]ednafen.*$",
+    class = regex_pattern
   },
   immediate = true,
+  fullscreen = true,
   content = "game"
 })
-
 
 -- hl.window_rule({
 --     name  = "match_class___xephyr",
