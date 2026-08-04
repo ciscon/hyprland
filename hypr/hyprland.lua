@@ -1,4 +1,4 @@
---#apt install alacritty hyprland-guiutils fonts-font-awesome fonts-roboto waybar
+--#apt install alacritty hyprland-guiutils fonts-font-awesome fonts-roboto waybar xdg-desktop-portal-hyprland
 
 --###############
 
