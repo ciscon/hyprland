@@ -79,10 +79,15 @@ hl.config({
       inactive_border = "rgba(595959aa)",
     },
   },
+  cursor = {
+    no_hardware_cursors = true,
+  },
   debug = {
+    -- disable_logs = false,
     -- vfr = 1
   },
   render = {
+    -- cm_enabled = false,
     direct_scanout = 2
   },
   master = {
@@ -425,6 +430,7 @@ hl.workspace_rule({
 })
 
 --environment
+hl.env("AQ_NO_ATOMIC", 1)
 hl.env("XCURSOR_SIZE", 24)
 hl.env("HYPRCURSOR_SIZE", 24)
 hl.env("SDL_VIDEODRIVER", "wayland")
@@ -435,7 +441,7 @@ hl.env("QT_QPA_PLATFORM","wayland")
 -- Autostart
 hl.on("hyprland.start", function()
   hl.exec_cmd("$HOME/bin/amdclocks")
-  hl.exec_cmd("waybar &")
+  hl.exec_cmd("/home/git/waybar/build/waybar")
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("easyeffects -w")
   hl.exec_cmd("dunst")
