@@ -23,6 +23,7 @@
 hl.monitor({
   output   = "",
   mode     = "highrr",
+  supports_wide_color = -1
 })
 
 
