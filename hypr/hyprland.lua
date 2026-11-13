@@ -373,6 +373,7 @@ hl.window_rule({
     title = "^(annotate_toolbar)$",
     class = "^(zoom)$"
   },
+  float = true,
   no_initial_focus = true
 })
 
@@ -444,6 +445,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("$HOME/bin/amdclocks")
   hl.exec_cmd("/home/git/waybar/build/waybar")
   hl.exec_cmd("hyprpaper")
+  hl.exec_cmd("hypridle")
   hl.exec_cmd("easyeffects -w")
   hl.exec_cmd("dunst")
   hl.exec_cmd("alacritty --daemon")
