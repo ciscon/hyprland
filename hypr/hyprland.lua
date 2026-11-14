@@ -251,10 +251,11 @@ hl.bind(mainMod .. " + " .. "M", hl.dsp.window.fullscreen({ mode = "fullscreen",
 
 --reset workspace
 
-hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd("hyprctl keyword general:layout master"))
-hl.bind(mainMod .. " + " .. "R", hl.dsp.layout("focusmaster master"))
-hl.bind(mainMod .. " + " .. "R", hl.dsp.layout("mfact exact .5"))
 hl.bind(mainMod .. " + " .. "R", function ()
+  hl.dispatch(hl.dsp.exec_cmd("hyprctl keyword general:layout master"))
+  hl.dispatch(hl.dsp.layout("focusmaster master"))
+  hl.dispatch(hl.dsp.layout("orientationleft"))
+  hl.dispatch(hl.dsp.layout("mfact exact .5"))
   local workspace = hl.get_active_workspace()
   if workspace == nil then return end
   local windows = hl.get_workspace_windows(workspace)
