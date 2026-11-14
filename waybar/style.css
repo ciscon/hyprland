@@ -44,23 +44,24 @@ button {
 #workspaces button {
     transition: none;
     padding: 0 8px;
-    color: #dddddd;
+    color: #eeeeee;
     /*margin: 0 2px 0 0px;*/
-    background: rgba(128, 128, 128, 0.5);
+    background: rgba(128, 128, 128, 0.55);
 }
 
 
 #workspaces button.empty {
     box-shadow: none;
     background: none;
+    background-color: rgba(128, 128, 128, .2);
 }
 
 #workspaces button.active {
-    background: rgba(222, 147, 95, 0.5);
+    background: rgba(222, 147, 95, 0.55);
 }
 
 #workspaces button.urgent {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.55);
 }
 
 #workspaces button:hover {
