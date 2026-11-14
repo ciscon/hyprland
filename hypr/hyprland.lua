@@ -254,40 +254,24 @@ hl.bind(mainMod .. " + " .. "M", hl.dsp.window.fullscreen({ mode = "fullscreen",
 hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd("hyprctl keyword general:layout master"))
 hl.bind(mainMod .. " + " .. "R", hl.dsp.layout("focusmaster master"))
 hl.bind(mainMod .. " + " .. "R", hl.dsp.layout("mfact exact .5"))
--- unfloat all windows
 hl.bind(mainMod .. " + " .. "R", function ()
   local workspace = hl.get_active_workspace()
   if workspace == nil then return end
-
   local windows = hl.get_workspace_windows(workspace)
+  for _, window in ipairs(windows) do
+    hl.dispatch(hl.dsp.window.float({ window = window, action = "on" }))
+  end
   for _, window in ipairs(windows) do
     hl.dispatch(hl.dsp.window.float({ window = window, action = "off" }))
   end
+  hl.dispatch(hl.dsp.layout("swapwithmaster master ignoremaster"))
 end)
 
---##for some reason this crashes hyprland by running repeatedly
-
---bind = $mainMod, R, togglefloating,
-
 --set back to normal tiling
-
 hl.bind(mainMod .. " + " .. "T", hl.dsp.layout("orientationleft"))
 
 --set to bottom tiling
-
 hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "T", hl.dsp.layout("orientationbottom"))
-
---#dwindle
-
---bind = $mainMod CONTROL, T, exec, hyprctl keyword general:layout dwindle
-
---bind = $mainMod, D, pseudo, # dwindle
-
---bind = $mainMod, J, togglesplit, # dwindle
-
---bind = $mainMod CONTROL, T, layoutmsg, preserve_split true
-
--- hl.bind(mainMod .. " + " .. "space", hl.dsp.exec_cmd("hyprctl keyword general:layout $(hyprctl getoption general:layout | grep -q 'scrolling' && echo 'master' || echo 'scrolling')"))
 
 --! @description: "Toggle between scrolling and master layout"; @windows;
 
