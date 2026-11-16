@@ -15,15 +15,11 @@
 --monitor=,modeline 274.29 1920 1928 1960 2000 1080 1130 1138 1144 +hsync -vsync,auto,auto #actual 119.880 (ntsc) reduced blanking
 --monitor=,modeline 369.00 1920 2080 2288 2656 1080 1083 1088 1160 -hsync +vsync,auto,auto #actual 119.880 (ntsc)
 --monitor=,modeline 274.56 1920 1928 1960 2000 1080 1130 1138 1144 +hsync -vsync,auto,auto #actual 120.0 cvt 1.2
---monitor=,modeline 285.50 1920 1968 2000 2080 1080 1083 1088 1144 +hsync -vsync,auto,auto #actual 120.0 cvt 1.1
---monitor=,modeline 370.00 1920 2080 2288 2656 1080 1083 1088 1160 -hsync +vsync,auto,auto #120.198 (nes) (artifacts)
---monitor=,modeline 286.00 1920 1968 2000 2080 1080 1083 1088 1144 +hsync -vsync,auto,auto #120.198 (nes) reduced blanking 1.1
---monitor=,modeline 275.01 1920 1928 1960 2000 1080 1130 1138 1144 +hsync -vsync,auto,auto #120.198 (nes) reduced blanking 1.2
+--monitor=,modeline 285.50 1920 1968 2000 2080 1080 1083 1088 1144 +hsync -vsync,auto,auto #actual 120.0 cvt 1.1 --monitor=,modeline 370.00 1920 2080 2288 2656 1080 1083 1088 1160 -hsync +vsync,auto,auto #120.198 (nes) (artifacts) --monitor=,modeline 286.00 1920 1968 2000 2080 1080 1083 1088 1144 +hsync -vsync,auto,auto #120.198 (nes) reduced blanking 1.1 --monitor=,modeline 275.01 1920 1928 1960 2000 1080 1130 1138 1144 +hsync -vsync,auto,auto #120.198 (nes) reduced blanking 1.2
 
 hl.monitor({
   output   = "",
   mode     = "highrr",
-  supports_wide_color = -1
 })
 
 
@@ -81,14 +77,14 @@ hl.config({
     },
   },
   cursor = {
-    no_hardware_cursors = true,
+    no_hardware_cursors = 1,
   },
   debug = {
     -- disable_logs = false,
     -- vfr = 1
   },
   render = {
-    -- cm_enabled = false,
+    cm_auto_hdr = 0,
     direct_scanout = 2
   },
   master = {
@@ -422,8 +418,6 @@ hl.env("XCURSOR_SIZE", 24)
 hl.env("HYPRCURSOR_SIZE", 24)
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("SDL_AUDIODRIVER", "pipewire")
---##flatpak qt applications don't always have this backend
-hl.env("QT_QPA_PLATFORM","wayland")
 
 -- Autostart
 hl.on("hyprland.start", function()
