@@ -319,6 +319,7 @@ hl.bind(mainMod .. " + " .. "TAB", hl.dsp.focus({ workspace = "previous" }))
 
 --disable vsync and enable direct scanout for games
 local immediate_apps = { 
+  '[Mm]ednafen',
   '[Xx][Tt]erm',
   '.*[Qq]uake.*',
   '.*zdoom.*',
@@ -348,13 +349,32 @@ hl.window_rule({
 -- })
 
 hl.window_rule({
-  name  = "match_title_____cssh",
+  name  = "floatwindows",
   match = {
-    title = "^(.*CSSH.*)$",
     title = "^(annotate_toolbar)$",
     class = "^(zoom)$"
   },
   float = true,
+  no_initial_focus = true
+})
+
+hl.window_rule({
+  name  = "workspace_10_float",
+  match = {
+    workspace = "10",
+  },
+  float = true,
+})
+
+hl.window_rule({
+  name  = "cssh_workspace_10",
+  match = {
+    title = "^(.*CSSH.*)$",
+    class = "^(XTerm|Cssh)$",
+  },
+  float = true,
+  fullscreen = false,
+  workspace = "10 silent",
   no_initial_focus = true
 })
 
