@@ -117,7 +117,7 @@ hl.config({
     disable_splash_rendering = true,
     --do not switch workspaces when starting programs
     -- focus_on_activate = true,
-    -- vrr = false
+    vrr = 3
   },
   input = {
     kb_layout = "us",
@@ -333,8 +333,6 @@ hl.window_rule({
     class = regex_pattern
   },
   fullscreen = true,
-  no_vrr = true,
-  confine_pointer = true,
   content = "game",
   immediate = true 
 })
