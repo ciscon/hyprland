@@ -105,8 +105,7 @@ hl.config({
     },
   },
   animations = {
-    enabled = false,
-    -- Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+    enabled = true,
   },
 
   misc = {
@@ -131,6 +130,9 @@ hl.config({
   },
 
 })
+
+hl.animation({ leaf = "global", enabled = true, speed = 1, bezier = "default" })
+
 
 -- See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
 
